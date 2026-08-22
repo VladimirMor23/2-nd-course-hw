@@ -83,6 +83,7 @@
     .header-img__group{
         display: none;
     }
+  
     .header-img__mobil{
         display: block;
         position: absolute;
@@ -143,6 +144,24 @@
         background-repeat: no-repeat;
 
     }
+    .svg-text-group1 {
+  animation: move-left 70s linear infinite;
+  transform-origin: left center;
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* двигаем на ширину всей полосы (3220px) */
+    transform: translateX(-400px);
+  }
+}
+    .header-img__animated{
+        overflow: visible;
+        height: 0;
+    }
     .header-img__svg{
 
         display: none;
@@ -152,6 +171,9 @@
         background-position: center;
         margin-top: auto;  
         
+    }
+    .games{
+        display: none;
     }
     .games__title{
         font-size: 40px;
@@ -186,6 +208,7 @@
         font-weight: 700;
         font-size: 40px;
         line-height: 78px;
+        padding-top: 50px;
     }
     .mini-games {
         display: flex;
@@ -254,7 +277,8 @@
         align-items: center;
         padding: 16px 28px;
         gap: 10px;
-        width: 285px;
+        max-width: 285px;
+        width: 100%;
         height: 55px;
         background: #202027;
         border: 1px solid #202027;
