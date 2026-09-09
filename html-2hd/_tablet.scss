@@ -1,0 +1,111 @@
+@media (max-width: 1440px) {
+    .center{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+@media (max-width: 1024px) {
+    .center{
+        padding-left: calc(50% - 393px);
+        padding-right: calc(50% - 393px);
+    }
+    .header-img__title {
+        font-size: 54px;
+        
+}
+    .header-img__group {
+        display: none;
+    }
+    .header-img__mobil {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-size: contain;
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+    .header-img__star5 {
+        position: absolute;
+        top: 600px;
+        right: 300px;
+        background-size: contain;
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+    .header-img__star4 {
+        position: absolute;
+        top: 690px;
+        right: 200px;
+        background-size: contain;
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+    .mini-game__img {
+            background-position: center;
+            border-radius: 30px;
+            max-width: 440px;
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-repeat: no-repeat;
+    }
+    .game {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding-top: 72px;
+        padding-bottom: 96px;
+    }
+}
+@media (min-width: 768px) and (max-width: 833px) {
+    .center{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .header-img__star2 {
+        position: absolute;
+        left: 39px;
+        top: 110px;
+        background-size: contain;
+        background-position: right center;
+        background-repeat: no-repeat;
+    }.game-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        max-width: 348px;
+        width: 100%;
+        border-radius: 30px;
+        background-color: #FFFFFF;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+    }
+    .game-card__img {
+        width: 100%;
+    }
+    .game{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .mini-game__img {
+        background-position: center;
+        border-radius: 30px;
+        max-width: 350px;
+        width: 100%;
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .mini-flex__img {
+        background-position: center;
+        border-radius: 30px;
+        max-width: 340px;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
