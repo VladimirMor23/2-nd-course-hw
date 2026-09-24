@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Задание</title>
+</head>
+<body>
+    <section>
+         <h1 id="header">Заголовок, который можно скрыть</h1>
+         <button id="btn">Скрыть</button>
+    </section>
+    <section>
+        <p id="text">Этот текст станет синим при нажатии на кнопку.</p>
+        <button id="color-btn">Изменить цвет</button>
+    </section>
+    <section>
+        <h1 id="main">Исходный заголовок</h1>
+        <button id="text-btn">Изменить текст</button>
+    </section>
+    <section>   
+        <p class="description">Первый элемент классом description</p>
+        <div class="description">Второй элемент классом description</div>
+        <span class="description">Третий элемент классом description</span>
+    </section>
+    <section>
+        <p class="description">Этот абзац изменится — него класс description</p>
+        <p class="info">Этот абзац не изменится — него другой класс</p>
+        <p class="description">Ещё один элемент классом description</p>
+        <p class="note">И этот не изменится</p>
+        <button id="change-desc-btn">Изменить все .description</button>
+
+    </section>
+
+    <section>
+        <button id="add-btn">Добавить элемент</button>
+    </section>
+    <section>
+        <p class="description">Первый абзац c классом description (будет удалён)</p>
+        <p class="description">Второй абзац c классом description</p>
+        <p class="info">Этот абзац не удалится — y него другой класс</p>
+
+<button id="remove-btn">Удалить элемент</button>
+    </section>
+
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const head = document.querySelector('#header'); 
+
+        if (btn && head) {
+            btn.addEventListener('click', () => {
+            const isHidden = window.getComputedStyle(head).display === 'none';
+            
+            if (isHidden) {
+                head.style.display = 'block';
+            } else {
+                head.style.display = 'none';
+            }
+            });
+        }
+        // Задание 2 
+            const textEl = document.querySelector('#text');
+            const btnTex = document.querySelector('#color-btn');
+
+            if (textEl && btnTex) {
+                btnTex.addEventListener('click', () => {
+                textEl.style.color = 'blue';
+                });
+  }
+        // Задание 3 
+            const titleE = document.querySelector('#main');
+            const btn2 = document.querySelector('#text-btn');
+
+            if (titleE && btn2) {
+                btn2.addEventListener('click', () => {
+                titleE.textContent = 'Привет, мир!';
+                });
+            }
+            // Задание 4 
+                const elements = document.querySelectorAll('.description');
+  
+                elements.forEach(el => {
+                    el.textContent = 'Измененный текст';
+                });
+            // Задание 5 
+            const btn3 = document.querySelector('#change-desc-btn');
+
+            if (btn3) {
+                btn3.addEventListener('click', () => {
+                const elements = document.querySelectorAll('.description');
+                
+                elements.forEach(el => {
+                    el.textContent = 'Новый текст';
+                });
+                });
+            }
+            // Задание 6
+                const btn4 = document.querySelector('#add-btn');
+
+                if (btn4) {
+                    btn4.addEventListener('click', () => {
+                    
+                    const newP = document.createElement('p');
+                    
+                    
+                    newP.textContent = 'Новый абзац';
+            
+                    document.body.appendChild(newP);
+                    });
+                }
+                // Задание 7
+                  const btn5 = document.querySelector('#remove-btn');
+
+                if (btn5) {
+                    btn5.addEventListener('click', () => {
+                    
+                    const firstDesc = document.querySelector('.description');
+
+            
+                    if (firstDesc) {
+                        firstDesc.remove();
+                    } else {
+                        console.log('Элементов с классом .description больше нет');
+                    }
+                    });
+                }
+</script>
+
+</body>
+</html>
