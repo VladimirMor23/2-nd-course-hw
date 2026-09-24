@@ -124,5 +124,35 @@ function reverse() {
   alert(`Перевёрнутый текст: ${rever}`);
 }
 
+// Игра камень, ножницы, бумага 
+ document.getElementById("ramdonBu").addEventListener("click", ramdonBul);
+
+ function computerPlay() {
+            const options = ["камень", "ножницы", "бумага"];
+            const randomIndex = Math.floor(Math.random() * 3);
+            return options[randomIndex];
+        }
+
+        function ramdonBul() {
+            const player = prompt("камень, ножницы или бумага").trim().toLowerCase();
+            
+            if (!player) return; 
+
+            const computer = computerPlay();
+            
+            const winner = {
+                камень: "ножницы",
+                бумага: "камень",
+                ножницы: "бумага"
+            };
+
+            if (player === computer) {
+                alert("Ничья!");
+            } else if (winner[player] === computer) {
+                alert("Вы победили!");
+            } else {
+                alert("Компьютер победил!");
+            }
+        }
 
 
