@@ -3,12 +3,31 @@
     padding: 0;
 }
 body{
-        font-family: "Montserrat", "Arial";
+    font-family: "Montserrat", "Arial";
+    
 }
 .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
 }
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+    scroll-behavior: auto;
+  }
+}
+#games1,
+#games2,
+#games3,
+#games4,
+#games5,
+#games6 {
+  scroll-margin-top: 80px; /* подставь реальную высоту своего меню */
+}
+
 
 .header-img{
     background-color: #E1FF8F;
@@ -19,13 +38,13 @@ body{
 .header-img__mobil1{
     display: none;
 }
-.header-img__mobil2{
+.header-img__mobile{
     display: none;
 }
-.header-img__mobil3{
+.header-img__mobils{
     display: none;
 }
-.header-img__mobil4{
+.header-img__mob{
     display: none;
 }
 
@@ -38,7 +57,7 @@ body{
     background-position: right center;
     background-repeat: no-repeat;
 }
-.header-img__star2{
+.header-img__one{
     position: absolute;
     left: 39px;
     top: 120px;
@@ -47,7 +66,7 @@ body{
     background-repeat: no-repeat;
 
 }
-.header-img__star3{
+.header-img__two{
     position: absolute;
     top: 80px;
     background-size: contain;
@@ -55,7 +74,7 @@ body{
     background-repeat: no-repeat;
 
 }
-.header-img__star5{
+.header-img__stars{
     position: absolute;
     top: 500px;
     right: 600px; 
@@ -64,7 +83,7 @@ body{
     background-repeat: no-repeat;
 
 }
-.header-img__star4{
+.header-img__war{
     position: absolute;
     top: 590px;
     right: 500px;
@@ -75,7 +94,8 @@ body{
 }
 .header-img__section{
     padding-top: 196px;
-    padding-bottom: 246px;
+    padding-bottom: 156px;
+    padding-left: 98px;
 }
 .header-img__title{
     max-width: 769px;
@@ -97,8 +117,6 @@ body{
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
-    display: flex;
-    align-items: center;
     color: #202027;
     padding-bottom: 48px;
     position: relative;
@@ -124,69 +142,46 @@ body{
     cursor: pointer;
     text-decoration: none;
 }
+
 .button:hover {
      background-color: #FFFFFF;
     color: black;
     transform: translateY(-1px);
     box-shadow: -4px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.header-img__animated{
-     position: relative;
-    width: 100%;
-    height: 90px;
-    max-width: 2500px;
-    overflow: hidden;
-    line-height: 0;
-    margin: 0;
-    padding: 0;
-    background-color: #BCEC30;
 
+.animation{
+  width: 100%;
+  height: 90px;
+  background-color: #BDED35;
+  overflow: hidden;
+  position: relative;
 }
-.header-img__svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    /*box-sizing: border-box;
+.animation__title{
+    font-size: 33px;
+    font-weight: 700;
+}
+.header-img__star{
+    padding-top: 5px;
+}
+
+.animation__block {
+    height: 35px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    position: absolute;
-    max-width: 1500px;
-    width: 100%;
-    height: 90px;
-    top: 710px;
-    background: #BCEC30;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(25px);*/
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 2700px;
+    gap: 32px;
+    padding-top: 24px;
+    animation: scroll 20s infinite linear;
+    align-items: center;
 }
 
-.svg-text-group {
-  transform: scale(1.8);
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* сдвиг на 100% ширины блока */
 }
 
-.svg-text-group {
-  animation: move-left 15s linear infinite;
-  transform-origin: left center;
-}
-
-@keyframes move-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    /* двигаем на ширину всей полосы (3220px) */
-    transform: translateX(-3220px);
-  }
-}
-.header-img__svg1{
-    display: none;
-    max-width: 1440px;
-    width: 100%;
-}
 .section-img{
     background-color: #202027;
     padding-top: 94px;
@@ -200,7 +195,7 @@ body{
     background-repeat: no-repeat;
     z-index: 1;
 }
-.section-img__img2{
+.section-img__one{
     position: absolute;
     top: 1500px;
     left: 5px;
@@ -209,7 +204,7 @@ body{
     background-repeat: no-repeat;
     z-index: 1;
 }
-.section-img__img3{
+.section-img__two{
     position: absolute;
     top: 1600px;
     left: 60px;
@@ -225,9 +220,20 @@ body{
     gap: 32px;
     padding-top: 72px;
     padding-bottom: 96px;
-
-  
+    justify-content: center; 
 }
+.games{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.games__block{
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    flex-direction: column;
+}
+
 .games__text{
     width: 788px;
     height: 96px;
@@ -256,7 +262,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 4px;
     max-width: 378px;
     width: 100%;
     border-radius: 30px;
@@ -280,8 +286,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px;
-    gap: 26px;
+    padding: 21px 29px 10px 29px;
+    gap: 18px;
     border-radius: 30px;
     flex: none;
     order: 1;
@@ -314,6 +320,10 @@ body{
 }
 .mini{
     background-color: #202027;
+    padding-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .mini-games{
     display: flex;
@@ -321,6 +331,7 @@ body{
     gap: 32px;
     padding-bottom: 144px;
     padding-top: 72px;
+    align-items: center;
 }
 .mini__title{
     font-weight: 700;
@@ -329,13 +340,18 @@ body{
     display: flex;
     align-items: center;
     color: #FFFFFF;
+    max-width: 1200px;
+    width: 100%;
 }
 .mini-game{
-    border-radius: 30px;
+        border-radius: 30px;
+    max-width: 1200px;
+    width: 100%;
     background-color: white;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+
 }
 
 .mini-game__img{
@@ -378,10 +394,13 @@ body{
     color: #FFFFFF;
 }
 .mini-flex{
-    border-radius: 30px;
+       border-radius: 30px;
+    max-width: 1200px;
+    width: 100%;
     background-color: white;
     display: flex;
     justify-content: space-between;
+
 }
 
 .mini-flex__img{

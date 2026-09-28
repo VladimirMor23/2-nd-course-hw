@@ -155,4 +155,26 @@ function reverse() {
             }
         }
 
+        // Генератор случайных цветов 
+          function getRandomColor() {
+          const r = Math.floor(Math.random() * 256);
+          const g = Math.floor(Math.random() * 256);
+          const b = Math.floor(Math.random() * 256);
+          return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const button = document.getElementById('changeColorBtn');
+          const card = document.getElementById('randomColor');
+
+          if (button && card) {
+            button.addEventListener('click', () => {
+              card.style.backgroundColor = getRandomColor();
+            });
+    }
+  });
+       
+      
+    
+
 
